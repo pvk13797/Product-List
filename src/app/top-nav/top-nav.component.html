@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-success shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand">Products</a>
+    <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+    <div class="searchbar">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+        placeholder="search product">
+      <div class="icon">
+        <i class="bi bi-search"></i>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="column" *ngFor="let product of products | filter:searchText">
+    <img alt="images" [src]="product.images[0].url">
+    <div class="text-block">
+      <p>{{ product.name }}</p>
+    </div>
+  </div>
+</div>

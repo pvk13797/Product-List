@@ -1,0 +1,103 @@
+nav .searchbar {
+    position: relative;
+}
+
+/* Styling the search box where the 
+    input would be given */
+nav .searchbar input[type="text"] {
+    border: 0;
+    padding: 0;
+    width: 0px;
+    height: 35px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Styling the search bar icon */
+nav .searchbar .icon {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 100%;
+    background: none;
+    border-radius: 3px;
+    color: #fff;
+    transition: all 0.5s 0.3s ease;
+}
+  
+nav .searchbar .icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+  
+nav .searchbar .icon.active {
+    background: #062333;
+    transition: all 0.3s ease;
+}
+  
+nav .searchbar input[type="text"].active {
+    width: 250px;
+    padding: 0 10px;
+    transition: all 0.5s 0.2s ease;
+}
+
+.navbar-brand {
+    margin-left: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* .column {
+    float: none;
+    width: 20%;
+    padding: 5px 5px 5px 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+} */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 10px 5px;
+    padding: 10px 5px;
+}
+
+.column img {
+    margin-top: 5px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.column .text-block {
+    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.column .text-block:hover::after {
+    background-color: seagreen;
+    text-align: center;
+    content: 'Add to Cart';
+    padding: 10px;
+}

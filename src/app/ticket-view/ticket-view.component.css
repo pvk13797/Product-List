@@ -1,0 +1,15 @@
+.navbar-brand {
+    margin-left: 10px;
+}
+
+hr {
+    width: 430px; 
+    margin: auto;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 200px;
+
+}

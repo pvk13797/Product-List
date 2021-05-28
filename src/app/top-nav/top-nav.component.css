@@ -87,7 +87,7 @@ nav .searchbar input[type="text"].active {
 
 .column .text-block {
     background-color: rgba(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0);
     color: white;
     width: 100%;
     text-align: center;
@@ -95,9 +95,12 @@ nav .searchbar input[type="text"].active {
     cursor: pointer;
 }
 
-.column .text-block:hover::after {
+/* .column .text-block:hover::after {
+    position: relative;
+    top: -8px;
     background-color: seagreen;
     text-align: center;
     content: 'Add to Cart';
-    padding: 10px;
-}
+    padding: 15px;
+    margin: 10px;
+} */

@@ -19,10 +19,10 @@
         aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
           <a style="text-decoration: none;" href="#" class="list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Apple</h5>
-              <small class="text-muted quantity"><i class="bi bi-x"></i>1</small>
-              <small class="text-muted price-tag">40</small>
+            <div class="d-flex w-100 justify-content-between" *ngFor="let item of cartItems">
+              <h5 class="mb-1">{{ item }}</h5>
+              <small class="quantity"><i class="bi bi-x"></i>{{ cart[item].length }}</small>
+              <small class="text-muted price-tag">{{ getPrice(item) }}</small>
             </div>
           </a>
         </div>
@@ -43,7 +43,7 @@
     <a style="text-decoration: none;" href="#" class="list-group-item-action flex-column align-items-start">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Total</h5>
-        <small class="text-muted price-tag">46.25</small>
+        <small class="text-muted price-tag"></small>
       </div>
     </a>
   </div>

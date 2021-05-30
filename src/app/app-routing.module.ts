@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { TopNavComponent } from './top-nav/top-nav.component';
 import { TicketViewComponent } from './ticket-view/ticket-view.component';
 
-
 const routes: Routes = [];
 
 @NgModule({

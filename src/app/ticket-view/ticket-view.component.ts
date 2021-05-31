@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedataService } from '../sharedata.service';
 
 @Component({
@@ -25,12 +25,21 @@ export class TicketViewComponent implements OnInit {
     return totalPrice;
   }
 
-  getTotal(total: any) {
-    let totalAmount = 0;
-    this.cartItems[total]
-      totalAmount = totalAmount + total;
-    return totalAmount;
+  getTotalPrice() {
+    let totalPrice = 0;
+
+    this.cartItems.forEach((o) => {
+      totalPrice = totalPrice + this.getPrice(o);
+    });
+      totalPrice = totalPrice + 6.25;
+    return totalPrice;
   }
+
+/*   getTotal(name: any) {
+    let totalAmount = 0;
+    let totalPrice = this.cartItems[name].includes(name.price);
+    return totalPrice;
+  }  */
 
   ngOnInit(): void {
 
@@ -54,7 +63,7 @@ export class TicketViewComponent implements OnInit {
           }
         });
         this.cartItems = Object.keys(this.cart);
-        console.log(this.cartItems);
+        // console.log(this.cartItems);
       }
     });
 

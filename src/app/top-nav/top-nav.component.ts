@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { SharedataService } from '../sharedata.service';
 import * as $ from 'jquery';
+import data from '../../assets/data.json';
 
 @Component({
   selector: 'app-top-nav',
@@ -10,7 +11,7 @@ import * as $ from 'jquery';
 export class TopNavComponent implements OnInit {
 
   toggled: boolean = false;
-  products: any = [];
+  products: any[] = data;
   searchText: any;
   cart: any = [];
   
@@ -53,7 +54,7 @@ export class TopNavComponent implements OnInit {
       });
   });
 
-  this.sharedData.getProduct().subscribe(data => {
+/*   this.sharedData.getProduct().subscribe(data => {
     for (const d of (data as any)) {
       this.products.push({
         name: d.name,
@@ -62,7 +63,7 @@ export class TopNavComponent implements OnInit {
       });
     }
     console.log(this.products);
-  });
+  }); */
   }
 
 }

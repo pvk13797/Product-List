@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const localUrl = '../assets/data/data.json';
+const localUrl = '../assets/data.json';
 
 @Injectable({
   providedIn: 'root'

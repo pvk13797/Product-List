@@ -7,6 +7,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedataService } from './sharedata.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [SharedataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

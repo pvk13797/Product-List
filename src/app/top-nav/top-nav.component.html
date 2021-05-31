@@ -17,9 +17,9 @@
 
 <div class="row">
   <div class="column" *ngFor="let product of products | filter:searchText">
-    <img alt="images" [src]="product.images[0].url"> 
+    <img alt="images" [src]="product.images[0].url">
     <div class="text-block">
-      <p (click)="addItemToCart(product)">{{ product.name }}</p>
+      <p type="button" (click)="addItemToCart(product)">{{ product.name }}</p>
     </div>
   </div>
 </div>

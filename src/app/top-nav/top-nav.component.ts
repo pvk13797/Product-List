@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { SharedataService } from '../sharedata.service';
-import * as $ from 'jquery';
 import data from '../../assets/data.json';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-top-nav',
@@ -33,7 +33,7 @@ export class TopNavComponent implements OnInit {
       }
   }
 
-  onAdd() {
+  /*   onAdd() {
     this.sharedData.setCount.next(1);
   }
 
@@ -41,7 +41,7 @@ export class TopNavComponent implements OnInit {
     this.sharedData.setCount.next(-1);
   }
 
-  /* showMe() {
+  showMe() {
     this.toggled = !this.toggled;
     console.log(this.toggled);
   } */

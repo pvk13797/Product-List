@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'product-list';
 
+  year = new Date().getFullYear();
+
   /* productList = [
     {name: 'Z900', price: 8799},
     {name: 'shubert helmet', price: 999},

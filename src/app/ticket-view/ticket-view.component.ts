@@ -10,6 +10,7 @@ export class TicketViewComponent implements OnInit {
 
   public isCollapsed = false;
   itemCount: number = 0;
+  taxPrice: number = 12.40;
   addCart: any = [];
   cart: {[key:string]: any[]} = {};
   cartItems: Array<string> = [];
@@ -31,7 +32,7 @@ export class TicketViewComponent implements OnInit {
     this.cartItems.forEach((o) => {
       totalPrice = totalPrice + this.getPrice(o);
     });
-      totalPrice = totalPrice + 6.25;
+      totalPrice = totalPrice + this.taxPrice;
     return totalPrice;
   }
 

@@ -9,7 +9,24 @@ hr {
 
 .bottom {
     position: absolute;
-    bottom: 20px;
-    right: 200px;
+    bottom: 45px;
+    right: 190px;
+}
 
+.person-icon {
+    position: absolute;
+    right: 60px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.three-dots {
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    font-size: large;
+}
+
+.ticket-heading {
+    font-weight: bold;
 }

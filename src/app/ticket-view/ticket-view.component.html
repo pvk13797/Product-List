@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <nav class="navbar navbar-light bg-light shadow">
     <div class="container-fluid">
-      <a style="font-weight: bold;" class="navbar-brand" href="#">Ticket</a>
-      <i style="position: absolute;right: 60px;cursor: pointer;" class="bi bi-person-plus-fill"></i>
-      <i style="position: absolute;right: 20px;cursor: pointer;" class="bi bi-three-dots-vertical"></i>
+      <a class="navbar-brand ticket-heading" href="#">Ticket</a>
+      <i class="bi bi-person-plus-fill person-icon"></i>
+      <i class="bi bi-three-dots-vertical three-dots"></i>
     </div>
   </nav>
 
@@ -18,11 +18,11 @@
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
         aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
-          <a style="text-decoration: none;" href="#" class="list-group-item-action flex-column align-items-start">
+          <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
             <div class="d-flex w-100 justify-content-between" *ngFor="let item of cartItems">
-              <h5 class="mb-1">{{ item }}</h5>
-              <small class="quantity"><i class="bi bi-x"></i>{{ cart[item].length }}</small>
-              <small class="text-muted price-tag">{{ getPrice(item) }}</small>
+              <p class="mb-1 fw-bold">{{ item }}</p>
+              <p class="quantity"><i class="bi bi-x"></i>{{ cart[item].length }}</p>
+              <p class="text-muted price-tag fw-bold">{{ getPrice(item) | currency:'INR' }}</p>
             </div>
           </a>
         </div>
@@ -31,19 +31,19 @@
   </div>
   <hr>
   <div class="accordion-body">
-    <a style="text-decoration: none;" href="#" class="list-group-item-action flex-column align-items-start">
+    <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Tax</h5>
-        <small class="text-muted price-tag">6.25</small>
+        <p class="text-muted price-tag fw-bold">{{ taxPrice | currency:'INR' }}</p>
       </div>
     </a>
   </div>
   <hr>
   <div class="accordion-body">
-    <a style="text-decoration: none;" href="#" class="list-group-item-action flex-column align-items-start">
+    <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Total</h5>
-        <small class="text-muted price-tag">{{ getTotalPrice() }}</small>
+        <p class="text-muted price-tag fw-bolder">{{ getTotalPrice() | currency:'INR' }}</p>
       </div>
     </a>
   </div>

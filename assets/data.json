@@ -1,0 +1,47 @@
+[
+   {
+       "product_id": "1",
+       "name": "Apples",
+       "visibility": "visible",
+       "price": 100,
+       "inventory": 10,
+       "available": true,
+       "images": [
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p1_i1_w5184.jpeg"
+           },
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p1_i2_w3839.jpeg"
+           }
+       ]
+   },
+   {
+       "product_id": "2",
+       "name": "Asparagus",
+       "visibility": "visible",
+       "price": 120,
+       "inventory": 20,
+       "available": true,
+       "images": [
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p2_i1_w3840.jpeg"
+           },
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p2_i2_w1706.jpeg"
+           }
+       ]
+   },
+   {
+       "product_id": "3",
+       "name": "Beans",
+       "visibility": "visible",
+       "price": 60,
+       "inventory": 100,
+       "available": true,
+       "images": [
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p3_i1_w2509.jpeg"
+           }
+       ]
+   }
+]

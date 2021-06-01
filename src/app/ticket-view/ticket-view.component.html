@@ -15,6 +15,7 @@
           Dine in
         </button>
       </h2>
+
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
         aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
@@ -48,7 +49,36 @@
     </a>
   </div>
 
+  <table class="table" id="content"> <!-- This is for PDF Generator Only-->
+    <thead>
+      <tr>
+        <th scope="col">Product-Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems;">
+        <td scope="row">{{ item }}</td>
+        <td>{{ cart[item].length }}</td>
+        <td>{{ getPrice(item) }}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Tax</th>
+        <td></td>
+        <td>{{ taxPrice }}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">Total</th>
+        <td></td>
+        <td>{{ getTotalPrice() }}</td>
+      </tr>
+    </tbody>
+  </table> <!-- End -->
+
   <div class="bottom">
-    <button type="button" class="btn btn-success btn-lg">Buy</button>
+    <button type="button" (click)="openPDF()" class="btn btn-success btn-lg">Buy</button>
   </div>
 </div>

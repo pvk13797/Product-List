@@ -30,3 +30,7 @@ hr {
 .ticket-heading {
     font-weight: bold;
 }
+
+#content {
+    display: none;
+}

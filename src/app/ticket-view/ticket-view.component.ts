@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { SharedataService } from '../sharedata.service';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 @Component({
   selector: 'app-ticket-view',
   templateUrl: './ticket-view.component.html',
   styleUrls: ['./ticket-view.component.css']
 })
+
 export class TicketViewComponent implements OnInit {
+
+  // @ViewChild('content', {static: false}) content!: ElementRef;
 
   public isCollapsed = false;
   itemCount: number = 0;
@@ -16,6 +21,30 @@ export class TicketViewComponent implements OnInit {
   cartItems: Array<string> = [];
 
   constructor(private sharedData: SharedataService) { }
+
+  public openPDF():void {
+    //let DATA: any = document.getElementById('content')?.innerHTML;
+    let PDF: jsPDF = new jsPDF();
+
+    PDF.setFontSize(18);
+    PDF.text('Invoice Bill', 95, 8);
+    PDF.setFontSize(11);
+    PDF.setTextColor(100);
+
+    (PDF as any).autoTable({
+      html: ("#content"),
+      theme: 'striped'
+    })
+    PDF.output("dataurlnewwindow");
+    PDF.save('Product-List-Bill.pdf');
+
+  /*PDF.html(DATA, {
+      callback: (PDF) => {
+        PDF.output("dataurlnewwindow");
+      }
+    }); */ 
+      //PDF.save('product-list.pdf'); 
+  }
 
   getPrice(name: any) {
     let totalPrice = 0;
@@ -64,7 +93,7 @@ export class TicketViewComponent implements OnInit {
           }
         });
         this.cartItems = Object.keys(this.cart);
-        // console.log(this.cartItems);
+        console.log(this.cartItems);
       }
     });
 

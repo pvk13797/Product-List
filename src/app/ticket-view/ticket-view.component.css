@@ -34,3 +34,8 @@ hr {
 #content {
     display: none;
 }
+
+.empty {
+    text-align: center;
+    font-weight: bold;
+}

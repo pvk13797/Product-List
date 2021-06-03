@@ -12,6 +12,7 @@
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <i class="bi bi-cart-fill"></i>&nbsp;
           Dine in
         </button>
       </h2>
@@ -19,7 +20,9 @@
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
         aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
-          <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
+          <a class="list-group-item-action flex-column align-items-start text-decoration-none">
+            <p class="empty" *ngIf="!cartItems || cartItems.length === 0"><i class="bi bi-cart-fill"></i>&nbsp;Cart is
+              empty</p>
             <div class="d-flex w-100 justify-content-between" *ngFor="let item of cartItems">
               <p class="mb-1 fw-bold">{{ item }}</p>
               <p class="quantity"><i class="bi bi-x"></i>{{ cart[item].length }}</p>
@@ -31,25 +34,26 @@
     </div>
   </div>
   <hr>
-  <div class="accordion-body">
-    <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
+  <div class="accordion-body" [hidden]="!cartItems || cartItems.length === 0">
+    <a class="list-group-item-action flex-column align-items-start text-decoration-none">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Tax</h5>
-        <p class="text-muted price-tag fw-bold">{{ taxPrice | currency:'INR' }}</p>
+        <p class="price-tag fw-bold">{{ taxPrice | currency:'INR' }}</p>
       </div>
     </a>
   </div>
   <hr>
-  <div class="accordion-body">
-    <a href="#" class="list-group-item-action flex-column align-items-start text-decoration-none">
+  <div class="accordion-body" [hidden]="!cartItems || cartItems.length === 0">
+    <a class="list-group-item-action flex-column align-items-start text-decoration-none">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">Total</h5>
-        <p class="text-muted price-tag fw-bolder">{{ getTotalPrice() | currency:'INR' }}</p>
+        <p class="price-tag fw-bolder">{{ getTotalPrice() | currency:'INR' }}</p>
       </div>
     </a>
   </div>
 
-  <table class="table" id="content"> <!-- This is for PDF Generator Only-->
+  <table class="table" id="content">
+    <!-- This is for PDF Generator Only-->
     <thead>
       <tr>
         <th scope="col">Product-Name</th>
@@ -79,6 +83,7 @@
   </table> <!-- End -->
 
   <div class="bottom">
-    <button type="button" (click)="openPDF()" class="btn btn-success btn-lg">Buy</button>
+    <button type="button" [disabled]="!cartItems || cartItems.length === 0" (click)="openPDF()"
+      class="btn btn-success btn-lg">Buy</button>
   </div>
 </div>

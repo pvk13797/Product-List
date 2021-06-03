@@ -39,3 +39,14 @@ hr {
     text-align: center;
     font-weight: bold;
 }
+
+.items {
+    font-size: 10px;
+    position: relative;
+    right: 5px;
+    top: -8px;
+}
+
+.cart {
+    font-size: larger;
+}

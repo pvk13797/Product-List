@@ -65,6 +65,15 @@ export class TicketViewComponent implements OnInit {
     return totalPrice;
   }
 
+  getTotalItems() {
+    let totalItems = 0;
+
+    this.cartItems.forEach((o: any) => {
+      totalItems = totalItems + this.cart[o].length;
+    });
+    return totalItems;
+  }
+
 /*   getTotal(name: any) {
     let totalAmount = 0;
     let totalPrice = this.cartItems[name].includes(name.price);

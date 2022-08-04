@@ -43,5 +43,18 @@
                "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p3_i1_w2509.jpeg"
            }
        ]
+   },
+  {
+       "product_id": "4",
+       "name": "Carrot",
+       "visibility": "visible",
+       "price": 80,
+       "inventory": 100,
+       "available": true,
+       "images": [
+           {
+               "url": "http://mystore.weebly.com/uploads/5/4/9/1/54914441/s242778913223969860_p3_i1_w2509.jpeg"
+           }
+       ]
    }
 ]
